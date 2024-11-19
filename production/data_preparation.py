@@ -66,6 +66,9 @@ df_train = df_train[df_train.price <= df_train.price.quantile(0.999)]
 df_train = df_train[df_train.price >= df_train.price.quantile(0.001)]
 
 # Переводим непрерывную цену в категории цены, для nlp модели
+df_full['price_class'] = pd.qcut(
+    df_full['price'], q=PRICE_CLASSES_AMOUNT, labels=range(0, PRICE_CLASSES_AMOUNT)
+)
 df_train['price_class'] = pd.qcut(
     df_train['price'], q=PRICE_CLASSES_AMOUNT, labels=range(0, PRICE_CLASSES_AMOUNT)
 )
