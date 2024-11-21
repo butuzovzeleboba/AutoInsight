@@ -1,5 +1,7 @@
 PRICE_CLASSES_AMOUNT = 10
 
+HUGGING_FACE_MODEL = 'cointegrated/rubert-tiny2'
+
 MODEL_FEATURES = [
     'price', 'text', 'is_dealer',
     'year', 'engine', 'transmission',
@@ -7,6 +9,31 @@ MODEL_FEATURES = [
     'wheel_drive', 'fuel_type', 'brand',
     'region'
 ]
+
+FEATURE_SELECTED = [
+    'price_class_pred',
+    'power_horse',
+    'year',
+    'engine',
+    'brand_Россия',
+    'region_Южный',
+    'brand_Япония',
+    'mileage',
+    'brand_Китай',
+    'brand_Южная Корея',
+    'wheel_drive_полный',
+    'brand_США',
+    'wheel_drive_передний'
+]
+
+PARAMS_CATBOOST_TUNED = {
+    'iterations': 1862,
+    'learning_rate': 0.07126926225582741,
+    'depth': 8,
+    'subsample': 0.9534581504986257,
+    'colsample_bylevel': 0.9955728241823156,
+    'min_data_in_leaf': 4,  
+}
 
 DUMMY_FEATURES = [
     'transmission', 'car_body',

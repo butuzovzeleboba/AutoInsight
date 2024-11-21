@@ -38,9 +38,5 @@ headers = data.pop(0)
 
 # Create df 
 df = pd.DataFrame(data, columns=headers) 
-df_train, df_test = train_test_split(df, random_state=42, test_size=0.25)
 
-df.to_csv('../data/cars_data_clear.csv')
-df_train.to_csv('../data/train.csv')
-df_test.to_csv('../data/test.csv')
-   
+df.to_csv('../data/cars_data_clear.csv', index=False)
